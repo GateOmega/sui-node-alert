@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 # Load configuration from sui_alert.cfg file
 config = configparser.ConfigParser()
-config.read('sui_alert.cfg')
+config.read('alert-config.cfg')
 
 # Get Telegram bot token and chat ID from configuration
 token = config['tg_config']['token']
