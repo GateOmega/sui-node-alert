@@ -8,8 +8,8 @@ cd sui-alert
 ```
 Download below files into the `sui-alert` directory.
 * [sui-sync-alert.py](https://github.com/GateOmega/sui-node-alert/blob/main/sui-sync-alert.py) - The python script periodically checks the transaction count on the Sui blockchain and your node, and sends an alert via Telegram if the transaction count on your node is more than a certain threshold that you set.
-* [alert-config.cfg](https://github.com/GateOmega/sui-node-alert/blob/main/alert-config.cfg) - Settings and configuration
-* [alert.service](https://github.com/GateOmega/sui-node-alert/blob/main/alert.service) - Service
+* [alert-config.cfg](https://github.com/GateOmega/sui-node-alert/blob/main/alert-config.cfg) - Settings and configuration.
+* [alert.service](https://github.com/GateOmega/sui-node-alert/blob/main/alert.service) - Service file.
 
 
 ## Configuration
@@ -32,15 +32,30 @@ Important!
 
 #### Running the script as a daemon:
 
-Simply download [alert.service](https://github.com/GateOmega/sui-node-alert/blob/main/alert.service) file.
+Simply download [alert.service](https://github.com/GateOmega/sui-node-alert/blob/main/alert.service) file and edit.
 ```
 wget https://github.com/GateOmega/sui-node-alert/blob/main/alert.service
+
+nano alert.service
 ```
-Update <YOUR_NODE_NAME>, <USER> and change WorkingDirectory=/PATH/TO/sui-alert/`  path. 
+
+Update YOUR_NODE_NAME , USER and PATHs.. 
 
 
+Reload systemd manager configuration
+`sudo systemctl daemon-reload`
 
+Change the path to your service file and Create symlink
+`sudo ln -s /PATH/TO/sui-alert/alert.service /etc/systemd/system`
 
-## Create a service file
+To tell systemd to start services automatically at boot, you must enable them
+`sudo systemctl enable alert.service`
+
+Start your service
+`sudo systemctl start alert.service`
+
+To check a service's status
+`sudo systemctl status alert.service`
+
 
 
