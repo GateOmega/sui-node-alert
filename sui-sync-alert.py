@@ -1,8 +1,7 @@
 # Import modules and functions
 
 import re, time, json, requests, configparser
-from datetime import datetime
-from alert_module import send_tg_message, t_delta
+from datetime import datetime, timedelta
 
 # Load configuration from sui_alert.cfg file
 config = configparser.ConfigParser()
@@ -21,11 +20,32 @@ threshold = config['sui']['threshold']
 network = config['sui']['network']
 sui_url = config['sui']['sui_url']
 
-
 # Other Variables
 headers = {'Content-Type': 'application/json'}
 payload_rpc_discover = json.dumps({"jsonrpc": "2.0","id": 1,"method": "rpc.discover"})
 payload_txs = json.dumps({"jsonrpc": "2.0","id": 1,"method": "sui_getTotalTransactionNumber"})
+
+# Function that sends a message through the Telegram API. 
+def send_tg_message (message_text, token, chat_id) :
+
+    telegram_request = f'https://api.telegram.org/bot{token}/sendMessage?chat_id=-100{chat_id}&text={message_text}'
+
+    response = requests.get(telegram_request) 
+
+    if response.status_code == 200 :
+        return ("success")
+    else :
+        return (response.text)
+    
+# Function calculates a time delta in seconds. 
+def t_delta(delta):
+    td = timedelta(seconds=delta)
+    result = "All clear after"
+    result += f" {td.days}d" if td.days else ""
+    result += f" {td.seconds // 3600}h" if td.seconds // 3600 else ""
+    result += f" {td.seconds // 60 % 60}m" if td.seconds // 60 % 60 else ""
+    result += f" {td.seconds % 60}s" if td.seconds % 60 else ""
+    return(result)
 
 # Function to get Sui blockchain version
 def sui_vcheck():
