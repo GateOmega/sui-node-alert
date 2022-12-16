@@ -1,9 +1,9 @@
 [Unit]
-Description= $YOUR_NODE_NAME
+Description= <YOUR_NODE_NAME>
 After=network.target
 
 [Service]
-User= $USER
+User= <USER>
 Type=simple
 Restart=always
 WorkingDirectory=/PATH/TO/sui-alert/
