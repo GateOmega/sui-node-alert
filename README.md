@@ -8,8 +8,8 @@ cd sui-alert
 ```
 Download below files into the `sui-alert` directory.
 * [sui-sync-alert.py](https://github.com/GateOmega/sui-node-alert/blob/main/sui-sync-alert.py) - The python script periodically checks the transaction count on the Sui blockchain and your node, and sends an alert via Telegram if the transaction count on your node is more than a certain threshold that you set.
-* [alert-config.cfg](https://github.com/GateOmega/sui-node-alert/blob/main/alert-config.cfg) - Variables 
-* [alert.service](https://github.com/GateOmega/sui-node-alert/blob/main/alert.service) - 
+* [alert-config.cfg](https://github.com/GateOmega/sui-node-alert/blob/main/alert-config.cfg) - Settings and configuration
+* [alert.service](https://github.com/GateOmega/sui-node-alert/blob/main/alert.service) - Service
 
 
 ## Configuration
@@ -28,5 +28,19 @@ nano alert-config.cfg
 Important! 
 > [sui] section in cfg file: You should only keep (either "Testnet" or "Devnet") that you want to receive alerts for, and comment out the other section. This will ensure that only alerts for the selected network are sent.
 
+## Run the Script
+
+#### Running the script as a daemon:
+
+Simply download [alert.service](https://github.com/GateOmega/sui-node-alert/blob/main/alert.service) file.
+```
+wget https://github.com/GateOmega/sui-node-alert/blob/main/alert.service
+```
+Update <YOUR_NODE_NAME>, <USER> and change WorkingDirectory=/PATH/TO/sui-alert/`  path. 
+
+
+
+
+## Create a service file
 
 
