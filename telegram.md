@@ -7,7 +7,6 @@ To create an API token for a Telegram bot, you will need to create a bot using t
 3. The Bot Father will ask you to choose a name for your bot. Choose a name and send it to the Bot Father.
 4. The Bot Father will then ask you to choose a username for your bot. Choose a username that ends with bot (e.g. my_bot) and send it to the Bot Father.
 5. The Bot Father will then generate an API token for your bot and send it to you in the form of a message. This API token will be used to authenticate your bot when making API requests.
-6. You can now add the bot 
 
 > Once you have the API token for your bot, you can use it in your code to authenticate your bot when making API requests to the Telegram API. Note that the API token for your bot is a secret and should be kept confidential. Do not share it with anyone or include it in public code repositories.
 
