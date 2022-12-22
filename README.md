@@ -43,7 +43,7 @@ After updating YOUR_NODE_NAME , USER and PATHs in service file, run the below co
 
 `sudo systemctl daemon-reload`
 
-Change the path to your service file!
+Give the FULL PATH of alert.service file before run below command.
 `sudo ln -s /PATH/TO/sui-alert/alert.service /etc/systemd/system`
 
 `sudo systemctl enable alert.service`
