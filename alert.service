@@ -7,7 +7,7 @@ User= <USER>
 Type=simple
 Restart=always
 WorkingDirectory=/PATH/TO/sui-alert/
-ExecStart=/usr/bin/python3 /PATH/TO/sui-alert/sui-sync-alert.py
+ExecStart=/usr/bin/python3 /PATH/TO/sui-alert/sui-state-alert.py
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s QUIT $MAINPID
 
