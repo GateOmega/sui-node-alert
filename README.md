@@ -7,8 +7,8 @@ mkdir sui-alert
 cd sui-alert
 ```
 Download below files into the `sui-alert` directory.
-* [sui-state-alert.py](https://github.com/GateOmega/sui-node-alert/blob/main/sui-state-alert.py) - The python script periodically checks the transaction count on the Sui blockchain and your node, and sends an alert via Telegram if the transaction count on your node is more than a certain threshold that you set.
-* [alert-config.cfg](https://github.com/GateOmega/sui-node-alert/blob/main/alert-config.cfg) - Settings and configuration.
+* [sui-state-alert.py](https://raw.githubusercontent.com/GateOmega/sui-node-alert/main/sui-state-alert.py) - The python script periodically checks the transaction count on the Sui blockchain and your node, and sends an alert via Telegram if the transaction count on your node is more than a certain threshold that you set.
+* [alert-config.cfg](https://raw.githubusercontent.com/GateOmega/sui-node-alert/main/alert-config.cfg) - Settings and configuration.
 
 
 ## Configuration
@@ -31,7 +31,7 @@ Important!
 
 #### Running the script as a daemon:
 
-Simply download [alert.service](https://github.com/GateOmega/sui-node-alert/blob/main/alert.service) file and edit.
+Simply download [alert.service](https://raw.githubusercontent.com/GateOmega/sui-node-alert/main/alert.service) file and edit.
 ```
 wget https://github.com/GateOmega/sui-node-alert/blob/main/alert.service
 
