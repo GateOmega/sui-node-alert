@@ -33,7 +33,7 @@ Important!
 
 Simply download [alert.service](https://raw.githubusercontent.com/GateOmega/sui-node-alert/main/alert.service) file and edit.
 ```
-wget https://github.com/GateOmega/sui-node-alert/blob/main/alert.service
+wget https://raw.githubusercontent.com/GateOmega/sui-node-alert/main/alert.service
 
 nano alert.service
 ```
