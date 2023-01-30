@@ -91,7 +91,7 @@ while True:
     except Exception as error:
         dt_now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
         send_tg_message(f"{dt_now}\n\U00002757 Check if your node is up and running \n{error}", token, chat_id)
-        time.sleep(600)
+        time.sleep(60)
         continue
 
     # Compare transaction difference to the threshold value.
